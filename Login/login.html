@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Sign In</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="loginstyle.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img alt="Stellar Elite Hotels Spa Logo"src="assets/image/star.png" />
+            <div class="language-selector">
+                <img alt="Selected Language Flag" height="20" id="selected-flag" src="assets/image/eng.png" width="20"/>
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+        <p id="description">Welcome, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+        <div class="tabs">
+            <button class="active" id="tab-1">TC Identity</button>
+            <button id="tab-2">Foreign Identity</button>
+            <button id="tab-3">SMS</button>
+            <button id="tab-4">Email</button>
+        </div>
+        <div class="forms-container">
+            <!-- TC Identity Form -->
+            <div class="form tc-identity-form">
+                <div class="form-group">
+                    <label for="tc-identity-number" id="tc-label">TC Identity Number</label>
+                    <input id="tc-identity-number" placeholder="Enter Your TC Number" type="text"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" id="name-label">Name</label>
+                        <input id="name" placeholder="Enter Your Name" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname" id="surname-label">Surname</label>
+                        <input id="surname" placeholder="Enter Your Surname" type="text"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="birth-day" id="birth-day-label">Day</label>
+                        <select id="birth-day" class="day">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-month" id="birth-month-label">Month</label>
+                        <select id="birth-month" class="month">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-year" id="birth-year-label">Year</label>
+                        <select id="birth-year" class="year">
+                            <!-- 2024'den 1900'e kadar yılları oluştur -->
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" id="connect-button">Connect</button>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="agreement-checkbox"/>
+                    <label for="agreement-checkbox" id="agreement-label">I Accept the Agreement.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="share-info-checkbox"/>
+                    <label for="share-info-checkbox" id="share-info-label">I Allow to Share My Information.</label>
+                </div>
+            </div>
+            <!-- Foreign Identity Form -->
+            <div class="form foreign-identity-form" style="display: none;">
+                <div class="form-group">
+                    <label for="foreign-identity-number" id="foreign-id-label">Passport Identification Number</label>
+                    <input id="foreign-identity-number" placeholder="Enter Your Passport Identification Number" type="text"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="foreign-name" id="foreign-name-label">Name</label>
+                        <input id="foreign-name" placeholder="Enter Your Name" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="foreign-surname" id="foreign-surname-label">Surname</label>
+                        <input id="foreign-surname" placeholder="Enter Your Surname" type="text"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="foreign-birth-day" id="foreign-birth-day-label">Day</label>
+                        <select id="foreign-birth-day" class="day">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foreign-birth-month" id="foreign-birth-month-label">Month</label>
+                        <select id="foreign-birth-month" class="month">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foreign-birth-year" id="foreign-birth-year-label">Year</label>
+                        <select id="foreign-birth-year" class="year">
+                            <!-- 2024'den 1900'e kadar yılları oluştur -->
+                            <script>
+                                const currentYear2 = new Date().getFullYear();
+                                for (let i = currentYear2; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" id="foreign-connect-button">Connect</button>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="foreign-agreement-checkbox"/>
+                    <label for="foreign-agreement-checkbox" id="foreign-agreement-label">I Accept the Agreement.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="foreign-share-info-checkbox"/>
+                    <label for="foreign-share-info-checkbox" id="foreign-share-info-label">I Allow to Share My Information.</label>
+                </div>
+            </div>
+            <!-- SMS Form -->
+            <div class="form sms-form" style="display: none;">
+                <div class="form-group">
+                    <label for="sms-number" id="sms-number-label">SMS Number</label>
+                    <input id="sms-number" placeholder="Enter Your SMS Number" type="text"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sms-name" id="sms-name-label">Name</label>
+                        <input id="sms-name" placeholder="Enter Your Name" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="sms-surname" id="sms-surname-label">Surname</label>
+                        <input id="sms-surname" placeholder="Enter Your Surname" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn" id="sms-connect-button">Connect</button>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="sms-agreement-checkbox"/>
+                    <label for="sms-agreement-checkbox" id="sms-agreement-label">I Accept the Agreement.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="sms-share-info-checkbox"/>
+                    <label for="sms-share-info-checkbox" id="sms-share-info-label">I Allow to Share My Information.</label>
+                </div>
+            </div>
+
+            <!-- Email Form -->
+            <div class="form email-form" style="display: none;">
+                <div class="form-group">
+                    <label for="email" id="email-label">Email</label>
+                    <input id="email" placeholder="Enter Your Email" type="email"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn" id="email-connect-button">Connect</button>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="email-agreement-checkbox"/>
+                    <label for="email-agreement-checkbox" id="email-agreement-label">I Accept the Agreement.</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="email-share-info-checkbox"/>
+                    <label for="email-share-info-checkbox" id="email-share-info-label">I Allow to Share My Information.</label>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="contact">
+                <i class="fas fa-phone-alt"></i>
+                <p id="phone-number">0242 606 24 24</p>
+            </div>
+            <div class="logo">
+                <img alt="MSE Logo" src="assets/image/mse.png" width="120"/>
+            </div>
+    </div>
+
+    
+    <!-- Add this to your HTML file -->
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+<script src="loginscript.js"></script>        
+</body>
+</html>

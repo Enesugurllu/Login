@@ -1,0 +1,64 @@
+<html>
+ <head>
+  <title>
+   Stella Elite Resort &amp; Spa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet">
+
+ </head>
+ <body>
+  <div class="container">
+   <div class="language-selector">
+    <img alt="Flag" height="20" src="assets/image/eng.png" width="20"/>
+    <select onchange="changeLanguage(this.value)">
+     <option class="flag-option" value="en">
+      English
+     </option>
+     <option class="flag-option" value="tr">
+      Türkçe
+     </option>
+     <option class="flag-option" value="de">
+      Deutsch
+     </option>
+    </select>
+   </div>
+   <div class="logo">
+    <img alt="Stella Elite Resort &amp; Spa Logo" src="assets/image/star.png" width="100"/>
+   </div>
+   <div class="sign-in">
+    Sign In
+   </div>
+   <div class="welcome-text">
+    Welcome, Please Sign In!
+   </div>
+   <a href="login.html"><button class="button staff">
+    Staff Login
+   </button></a>
+   <button class="button guest">
+    Guest Login
+   </button>
+   <div class="checkbox-container">
+    <input type="checkbox" id="agreement-checkbox"/>
+    <label for="agreement-checkbox" id="agreement-label">I Accept the Agreement.</label>
+</div>
+<div class="checkbox-container">
+    <input type="checkbox" id="share-info-checkbox"/>
+    <label for="share-info-checkbox" id="share-info-label">I Allow to Share My Information.</label>
+</div>
+  </div>
+  <div class="footer">
+   <div class="contact">
+    <i class="fas fa-phone"></i>
+    0242 606 24 24
+   </div>
+   <div class="logo">
+    <img alt="MSE Logo" src="assets/image/mse.png" width="100"/>
+   </div>
+  </div>
+
+  <script src="script.js"></script>
+ </body>
+</html>
